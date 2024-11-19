@@ -1,0 +1,372 @@
+{
+	"info": {
+		"_postman_id": "bc41423c-32ac-41eb-ac2d-483b53d9a4ad",
+		"name": "Microservicio-Monopatin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24298768"
+	},
+	"item": [
+		{
+			"name": "MonopatinController",
+			"item": [
+				{
+					"name": "Obtener todos los monopatines",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/api/monopatin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"monopatin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener monopatin por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/api/monopatin/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"monopatin",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear monopatin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"latitud\": -34.603722,\r\n  \"longitud\": -58.381592,\r\n  \"bateria\": 80.0,\r\n  \"kilometrosRecorridos\": 100.0,\r\n  \"tiempoUso\": 300.0,\r\n  \"paradaId\": 3,\r\n  \"tarifaBase\": 50.0,\r\n  \"tarifaExtraPausa\": 20.0\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/monopatin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"monopatin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar monopatin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/api/monopatin/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"monopatin",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar monopatin",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"latitud\": -34.603722, \"longitud\": -58.381592, \"bateria\": 70.0, \"kilometrosRecorridos\": 120.0, \"tiempoUso\": 400, \"disponible\": true, \"parada\": { \"id\": 1 } }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/monopatin/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"monopatin",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener monopatines con más viajes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/api/monopatin/viajes?minViajes=2&anio=2024",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"monopatin",
+								"viajes"
+							],
+							"query": [
+								{
+									"key": "minViajes",
+									"value": "2"
+								},
+								{
+									"key": "anio",
+									"value": "2024"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener estado de monopatines",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/api/monopatin/estado",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"monopatin",
+								"estado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener monopatines cercanos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/api/monopatin/cercanos?latitud=-34.603722&longitud=-58.381592&radio=5.0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"monopatin",
+								"cercanos"
+							],
+							"query": [
+								{
+									"key": "latitud",
+									"value": "-34.603722"
+								},
+								{
+									"key": "longitud",
+									"value": "-58.381592"
+								},
+								{
+									"key": "radio",
+									"value": "5.0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener reporte de kilometros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/api/monopatin/reporte/kilometros/500",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"monopatin",
+								"reporte",
+								"kilometros",
+								"500"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ParadaController",
+			"item": [
+				{
+					"name": "Obtener todas las paradas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/api/parada",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"parada"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener parada por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/api/parada/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"parada",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear parada",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"nombre\": \"Parada Centro\", \"latitud\": -34.603722, \"longitud\": -58.381592 }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/parada",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"parada"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar parada",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8002/api/parada/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"parada",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar parada",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"nombre\": \"Parada Norte\", \"latitud\": -34.603722, \"longitud\": -58.381592 }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8002/api/parada/{id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8002",
+							"path": [
+								"api",
+								"parada",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

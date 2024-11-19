@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: microservicio-factura
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password:
+    url: jdbc:mysql://localhost:3306/factura?createDatabaseIfNotExist=true
+  jpa:
+    show-sql: true
+    database: mysql
+    hibernate:
+      ddl-auto: update
+  sql:
+    init:
+      mode: always
+
+server:
+  port: 8004

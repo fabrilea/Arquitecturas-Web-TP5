@@ -1,0 +1,368 @@
+{
+	"info": {
+		"_postman_id": "cf335b80-8b67-466c-8e0a-90fd87c7e04d",
+		"name": "Microservicio-Viaje",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24298768"
+	},
+	"item": [
+		{
+			"name": "ViajeController",
+			"item": [
+				{
+					"name": "Obtener todos los viajes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8005/api/viaje",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8005",
+							"path": [
+								"api",
+								"viaje"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener viaje por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8005/api/viaje/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8005",
+							"path": [
+								"api",
+								"viaje",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear viaje",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"monopatinId\": 1, \"fechaInicio\": \"2024-01-01T08:00:00\", \"fechaFin\": \"2024-01-01T09:00:00\", \"kilometrosRecorridos\": 10.0 }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8005/api/viaje",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8005",
+							"path": [
+								"api",
+								"viaje"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar viaje",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8005/api/viaje/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8005",
+							"path": [
+								"api",
+								"viaje",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar viaje",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"monopatinId\": 1, \"fechaInicio\": \"2024-01-01T08:00:00\", \"fechaFin\": \"2024-01-01T09:30:00\", \"kilometrosRecorridos\": 15.0, \"enCurso\": false }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8005/api/viaje/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8005",
+							"path": [
+								"api",
+								"viaje",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener tiempo total con pausas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8005/api/viaje/1/tiempo-total-con-pausas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8005",
+							"path": [
+								"api",
+								"viaje",
+								"1",
+								"tiempo-total-con-pausas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Finalizar viaje",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"kilometrosRecorridos\": 20.0 }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8005/api/viaje/1/finalizar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8005",
+							"path": [
+								"api",
+								"viaje",
+								"1",
+								"finalizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar pausa al viaje",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"inicio\": \"2024-01-01T09:30:00\", \"fin\": \"2024-01-01T09:45:00\", \"duracion\": 15 }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8005/api/viaje/agregarPausa/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8005",
+							"path": [
+								"api",
+								"viaje",
+								"agregarPausa",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener reporte de kilometros",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8005/api/viaje/reportes/kilometros",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8005",
+							"path": [
+								"api",
+								"viaje",
+								"reportes",
+								"kilometros"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PausaController",
+			"item": [
+				{
+					"name": "Obtener todas las pausas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8005/api/pausa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8005",
+							"path": [
+								"api",
+								"pausa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener pausa por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8005/api/pausa/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8005",
+							"path": [
+								"api",
+								"pausa",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear pausa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"inicio\": \"2024-01-01T09:30:00\", \"fin\": \"2024-01-01T09:45:00\", \"duracion\": 15, \"viaje\": { \"id\": 1 } }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8005/api/pausa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8005",
+							"path": [
+								"api",
+								"pausa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar pausa",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"inicio\": \"2024-01-01T10:00:00\", \"fin\": \"2024-01-01T10:15:00\", \"duracion\": 15 }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8005/api/pausa/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8005",
+							"path": [
+								"api",
+								"pausa",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar pausa",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8005/api/pausa/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8005",
+							"path": [
+								"api",
+								"pausa",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

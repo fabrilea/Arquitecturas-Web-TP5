@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: microservicio-usuario
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password:
+    url: jdbc:mysql://localhost:3306/usuario?createDatabaseIfNotExist=true
+  jpa:
+    show-sql: true
+    database: mysql
+    hibernate:
+      ddl-auto: update
+  sql:
+    init:
+      mode: always
+
+server:
+  port: 8001
+
+feign:
+  client:
+    config:
+      microservicio-monopatin:
+        url: http://localhost:8002/api/monopatin

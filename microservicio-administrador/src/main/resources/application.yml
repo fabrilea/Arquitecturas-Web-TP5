@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: microservicio-administrador
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password:
+    url: jdbc:mysql://localhost:3306/administrador?createDatabaseIfNotExist=true
+
+  jpa:
+    show-sql: true
+    database: mysql
+    hibernate:
+      ddl-auto: update
+
+  sql:
+    init:
+      mode: always
+
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  port: 8003
+
+feign:
+  client:
+    config:
+      microservicio-usuario:
+        url: http://localhost:8001/api/cuenta
+      microservicio-monopatin:
+        url: http://localhost:8002/api/monopatin
+      microservicio-factura:
+        url: http://localhost:8004/api/factura
+      microservicio-tarifa:
+        url: http://localhost:8004/api/tarifa
+      microservicio-viaje:
+        url: http://localhost:8005/api/viaje
