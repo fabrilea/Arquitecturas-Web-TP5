@@ -15,12 +15,7 @@ spring:
     database: mysql
   main:
     allow-bean-definition-overriding: true
-logging:
-  level:
-    org.springframework.security: DEBUG
-    io.jsonwebtoken: DEBUG
-
-
+    web-application-type: reactive
   cloud:
     gateway:
       routes:
